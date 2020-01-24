@@ -8,13 +8,13 @@ def calculateVolume():
 
     print("\nPlease input your car's average fuel consumption"
     " (l/100km):")
-    consumption = input("> ")
+    consumption = input(">")
 
     print("\nPlease input the distance traveled (km): ")
-    distance = input("> ")
+    distance = input(">")
 
     volume = int(consumption) / 100 * int(distance)
-    print("\nThe estimated volume of fuel consumed:", volume, "liters.")
+    print("\nEstimated volume of fuel consumed: " + str(volume) + "l")
     return
 
 # calculate maximum range possible to drive
@@ -22,18 +22,25 @@ def calculateRange():
 
     print("\nPlease input your car's average fuel consumption"
     " (l/100km):")
-    consumption = input("> ")
+    consumption = input(">")
 
     print("\nPlease input the volume of fuel available (l)")
-    volume = input("> ")
+    volume = input(">")
 
     distance = int(volume) / (int(consumption) / 100)
-    print("\nThe estimated maximum range:", distance, "kilometers.")
+    print("\nEstimated maximum range: " + str(distance) + "km")
 
 # calculate average fuel consumption
 # TO DO
 def calculateConsumption():
-    print("consumption")
+    print("\nPlease input the volume of fuel consumed (l): ")
+    volume = input(">")
+
+    print("\nPlease input the distance driven (km): ")
+    distance = input(">")
+
+    consumption = int(volume) / int(distance) * 100
+    print("\nEstimated fuel consumption: " + str(consumption) + "l/100km")
 
 def main():
 
@@ -42,17 +49,17 @@ def main():
 
     while True:
 
-        print("\n[1] Calculate volume of fuel used\n[2] Calculate",
-        "range\n[3] Calculate average fuel consumption",
+        print("\n[1] Calculate average fuel consumption\n[2] Calculate",
+        "range\n[3] Calculate volume of fuel used",
         "\n[Q] Quit\n")
         mode = input(">")
 
         if mode == "1":
-            calculateVolume()
+            calculateConsumption()
         elif mode == "2":
             calculateRange()
         elif mode == "3":
-            calculateConsumption()
+            calculateVolume()
         elif mode == "q" or mode == "Q":
             break
         else:
